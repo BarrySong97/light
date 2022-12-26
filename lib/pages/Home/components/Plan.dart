@@ -1,54 +1,59 @@
 import 'package:flutter/material.dart';
 
+import 'PlanBottomSheet.dart';
+
 class Plan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      // margin: EdgeInsets.only(bottom: 12, right: 12),
-      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      // height: 60,
-      decoration: BoxDecoration(
-          // color: Colors.white,
-          gradient: LinearGradient(
-            // Where the linear gradient begins and ends
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            // Add one stop for each color. Stops should increase from 0 to 1
-            stops: [0.1, 0.5, 0.7, 0.9],
-            colors: [
-              // Colors are easy thanks to Flutter's Colors class.
-              Colors.blue[300]!,
-              Colors.blue[600]!,
-              Colors.blue[700]!,
-              Colors.blue[800]!,
-            ],
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(8))),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          buildName(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              buildPeriodInfo(),
-              Column(
-                children: [
-                  Text(
-                    '2/20',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Text(
-                    '进度',
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
-              )
-            ],
-          )
-        ],
+    return GestureDetector(
+      onTap: () => {showLanguageSelectDialog(context)},
+      child: Container(
+        // margin: EdgeInsets.only(bottom: 12, right: 12),
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        // height: 60,
+        decoration: BoxDecoration(
+            // color: Colors.white,
+            gradient: LinearGradient(
+              // Where the linear gradient begins and ends
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              // Add one stop for each color. Stops should increase from 0 to 1
+              stops: [0.1, 0.5, 0.7, 0.9],
+              colors: [
+                // Colors are easy thanks to Flutter's Colors class.
+                Colors.blue[300]!,
+                Colors.blue[600]!,
+                Colors.blue[700]!,
+                Colors.blue[800]!,
+              ],
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(8))),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            buildName(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                buildPeriodInfo(),
+                Column(
+                  children: [
+                    Text(
+                      '2/20',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      '进度',
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -47,33 +47,40 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                 ),
                 Container(
                   // width: 50,
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: TabBar(
-                      indicatorColor: Colors.blue,
-                      isScrollable: true,
-                      // labelPadding: EdgeInsets.only(left: 0, right: 0),
-                      // isScrollable: true,
-                      controller: _tabController,
-                      tabs: [
-                        Tab(
-                          text: "训练计划",
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TabBar(
+                        indicatorColor: Colors.blue,
+                        isScrollable: true,
+                        controller: _tabController,
+                        tabs: [
+                          Tab(
+                            text: "训练计划",
+                          ),
+                          Tab(
+                            text: "训练模板",
+                          ),
+                        ],
+                        labelColor: Colors.black,
+                        indicator: MaterialIndicator(
+                          color: Colors.blue[400]!,
+                          // distanceFromCenter: 16,
+                          // radius: 3,
+                          horizontalPadding: 30,
+                          topLeftRadius: 0,
+                          topRightRadius: 0,
+                          paintingStyle: PaintingStyle.fill,
                         ),
-                        Tab(
-                          text: "训练模板",
-                        ),
-                      ],
-                      labelColor: Colors.black,
-                      indicator: MaterialIndicator(
-                        color: Colors.blue[400]!,
-                        // distanceFromCenter: 16,
-                        // radius: 3,
-                        horizontalPadding: 30,
-                        topLeftRadius: 0,
-                        topRightRadius: 0,
-                        paintingStyle: PaintingStyle.fill,
                       ),
-                    ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            '查看全部',
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xff50a8f1)),
+                          ))
+                    ],
                   ),
                 ),
                 SizedBox(
