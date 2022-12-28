@@ -88,7 +88,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
                 ),
                 Expanded(
                     child: Container(
-                  // height: 300,
+                  // padding: EdgeInsets.symmetric(horizontal: 8),
                   child: TabBarView(
                       controller: _tabController,
                       children: [buildPlan(), buildTrainingListBody()]),
@@ -107,18 +107,16 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
     return GridView.count(
       // Create a grid with 2 columns. If you change the scrollDirection to
       // horizontal, this produces 2 rows.
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 8),
       crossAxisCount: 2,
       mainAxisSpacing: 10,
       crossAxisSpacing: 10,
 
       // Generate 100 widgets that display their index in the List.
-      children: List.generate(4, (index) {
+      children: List.generate(6, (index) {
         return Plan();
       }),
     );
-    // return ListView(
-    //   children: [, Plan(), Plan()],
-    // );
   }
 
   Widget buildHeader() {
@@ -277,7 +275,7 @@ class _Home extends State<Home> with SingleTickerProviderStateMixin {
 
   Widget buildTrainingListBody() {
     return ListView.builder(
-      padding: const EdgeInsets.all(0),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 8),
       itemCount: 8,
       itemBuilder: (BuildContext context, int index) {
         return PlanItem();
