@@ -1,40 +1,46 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:light/pages/Home/components/planItemBottomSheet.dart';
 
 class PlanItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.only(bottom: 16),
-      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-      // width: double.infinity,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            // Where the linear gradient begins and ends
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            // Add one stop for each color. Stops should increase from 0 to 1
-            stops: [0.1, 0.5, 0.7, 0.9],
-            colors: [
-              // Colors are easy thanks to Flutter's Colors class.
-              Colors.blue[800]!,
-              Colors.blue[700]!,
-              Colors.blue[600]!,
-              Colors.blue[400]!,
-            ],
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(4))),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          buildInfo(),
-          buildChart(),
-          Spacer(),
-          buildData(),
-        ],
+    return GestureDetector(
+      onTap: () {
+        showPlanItemDetail(context);
+      },
+      child: Container(
+        width: double.infinity,
+        margin: EdgeInsets.only(bottom: 16),
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+        // width: double.infinity,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              // Where the linear gradient begins and ends
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              // Add one stop for each color. Stops should increase from 0 to 1
+              stops: [0.1, 0.5, 0.7, 0.9],
+              colors: [
+                // Colors are easy thanks to Flutter's Colors class.
+                Colors.blue[800]!,
+                Colors.blue[700]!,
+                Colors.blue[600]!,
+                Colors.blue[400]!,
+              ],
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(4))),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            buildInfo(),
+            buildChart(),
+            Spacer(),
+            buildData(),
+          ],
+        ),
       ),
     );
   }
